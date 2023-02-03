@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root {
+    --grey: (#3d3d3d);
+}
+
 * {
     box-sizing: border-box;
-    outline: 1px solid limegreen;
+    /*outline: 1px solid limegreen;*/
 }
 
 body {
@@ -24,7 +30,19 @@ nav {
     width: 100%;
 }
 
-nav * {
+nav .display-name {
+    display: inline-block;
+}
+
+nav .display-name * {
+    display: inline-block;
+}
+
+.main-nav {
+    display: inline-block;
+}
+
+.main-nav * {
     display: inline-block;
 }
 
@@ -38,6 +56,112 @@ nav ul {
     float: right;
 }
 
+.main-nav li {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.main-nav li a {
+    color: var(--grey);
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+}
+
+.dropdown {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+/* css checkbox hack from codepen   */
+
+input[type=checkbox] {
+    display: none;
+  }
+
+  .dropdown-items {
+    
+  }
+
+  .dropdown-items ul {
+    max-height: 0px;
+    overflow: hidden;
+    list-style: none;
+    transition: all 1s cubic-bezier(.325, 1, .22, 1);
+  }
+  
+  input[type=checkbox]:checked ~ .dropdown-items ul {
+    height: auto;
+    max-height: 12rem;
+    transition: all 1s cubic-bezier(.5, 1, .22, 1);
+  }
+  
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 13px;
+    height: 27px;
+    width: 27px;
+    cursor: pointer;
+    transition: all 1s cubic-bezier(.19, 1, .22, 1);
+  }
+  
+  .line {
+    position: absolute;
+    display: block;
+    background: #3d3d3d;
+    width: 18px;
+    height: .15rem;
+    border-radius: .2rem;
+    left: 0;
+    transition: all .6s cubic-bezier(.5, .1, 0, 1.2);
+  }
+  
+  .line-1 {
+    top: 0;
+  }
+  
+  .line-2 {
+    top: 7px;
+    width: 14px;
+    transform: translateX(2px);
+    -webkit-transform: translateX(2px);
+  }
+  
+  .line-3 {
+    top: 14px;
+  }
+  
+  input[type=checkbox]:checked ~ label .line-1 {
+    top: 0px;
+    width: 22px;
+    transform: translateX(-11px) rotate(-45deg) translateY(12px);
+  }
+  
+  input[type=checkbox]:checked ~ label .line-2 {
+    opacity: 0;
+  }
+  
+  input[type=checkbox]:checked ~ label .line-3 {
+    top: 14px;
+    width: 22px;
+    transform: translateX(-8px) rotate(45deg) translateY(-8px);
+  }
+
+  /* end of checkbox copied code   */
+
 .subtitle-section {
     background-color: blue;
 }
@@ -46,14 +170,38 @@ main section > * {
     display: inline-block;
 }
 
+@media screen and (max-width: 768px) {
+    main section > * {
+        display: block;
+    }
+}
+
 .about-me-title,
 .my-work-title,
 .contact-me-title {
     width: 30%;
 }
 
+@media screen and (max-width: 768px) {
+    .about-me-title,
+    .my-work-title,
+    .contact-me-title {
+        width: 100%;
+    }
+}
+
 .about-me-content,
 .my-work-content,
 .contact-me-content {
-    width: auto;
+    width: 70%;
+    float: right;
+}
+
+@media screen and (max-width: 768px) {
+    .about-me-content,
+    .my-work-content,
+    .contact-me-content {
+        width: 100%;
+        float: none;
+    }
 }

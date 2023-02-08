@@ -11,12 +11,12 @@
     <header>
         <nav>
             <div class="display-name">
-                <a href="#subtitle" class="">
+                <a href="#">
                     <img src="assets/images/profile-img.jpeg" class="display-name-image" alt="Profile Image">
                     <h2>Daryl's Portfolio</h2>
                 </a>
             </div>
-            <ul class="main-nav">
+            <ul class="expanded-nav">
                 <li><a href="#about-me">About Me</a></li>
                 <li><a href="#my-work">My Work</a></li>
                 <li><a href="#contact-me">Contact Me</a></li>
@@ -30,38 +30,49 @@
                     <div class="line line-3"></div>
                  </label>
                 <div class="dropdown-items">
-                  <ul>
-                    <li><a href="#">Link One</a></li>
-                    <li><a href="#">Link Two</a></li>
-                    <li><a href="#">Link Three</a></li>
-                    <li><a href="#">Link Four</a></li>
+                    <ul>
+                        <li><a href="#about-me">About Me</a></li>
+                        <li><a href="#my-work">My Work</a></li>
+                        <li><a href="#contact-me">Contact Me</a></li>
+                        <li><a href="#" target="_blank">Resume</a></li>
                     </ul>
                 </div>
             </div> 
         </nav>
     </header>
-    <section id="subtitle" class="subtitle-section">
-        <h2>Subtitle</h2>
-    </section>
     <main>
         <section id="about-me" class="about-me-section">
             <div class="about-me-title">
-                <h2>About Me</h2>
+                <h1>About Me</h1>
             </div>
             <div class="about-me-content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium sit reiciendis, labore aspernatur nesciunt iusto laudantium magnam ea atque velit id exercitationem iure! Omnis, delectus provident. Expedita enim sequi perspiciatis.</p>
+                <ul>
+                    <li>
+                        <img src="assets/images/education-icon.png" alt=""><!--<a href="https://www.flaticon.com/free-icons/knowledge" title="knowledge icons">Knowledge icons created by alimasykurm - Flaticon</a>-->
+                        <p>education</p>
+                    </li>
+                    <li>
+                        <img src="assets/images/work-icon.png" alt=""><!---<a href="https://www.flaticon.com/free-icons/work" title="work icons">Work icons created by Freepik - Flaticon</a>-->
+                        <p>work experience</p>
+                    </li>
+                    <li>
+                        <img src="assets/images/hobby-icon.png" alt=""><!--<a href="https://www.flaticon.com/free-icons/lifestyle" title="lifestyle icons">Lifestyle icons created by Iconjam - Flaticon</a>-->
+                        <p>hobbies</p>
+                    </li>
+                </ul>
             </div>
         </section>
         <section id="my-work" class="my-work-section">
             <div class="my-work-title">
-                <h2>My Work</h2>
+                <h1>My Work</h1>
             </div>
             <div class="my-work-content">
                 <card class="card-1">
                     <a class="card-link" href="https://darylbg.github.io/module-01-challenge/" target="_blank">
                         <div class="card-content">
                             <div class="card-content-title">
-                                <h2>View Project Webpage</h2>
+                                <h2>View Project</h2>
+                                <h3>Semantic HTML</h3>
                             </div>
                             <div class="card-content-link">
                                 <!---technically not allowed to next links in another link but i couldnt figure out how else to do this so wrapping the nested a tag in <object> seems to work for now-->
@@ -74,7 +85,8 @@
                     <a class="card-link" href="https://darylbg.github.io/milestone-project-2.0/" target="_blank">
                         <div class="card-content">
                             <div class="card-content-title">
-                                <h2>webpage</h2>
+                                <h2>View Project</h2>
+                                <h3>Holiday Booking Website</h3>
                             </div>
                             <div class="card-content-link">
                                 <!---technically not allowed to next links in another link but i couldnt figure out how else to do this so wrapping the nested a tag in <object> seems to work for now-->
@@ -84,40 +96,43 @@
                     </a>
                 </card>
                 <card class="card-3">
-                    <a class="card-link" href="https://css-tricks.com/nested-links/">
+                    <a class="card-link" href="https://darylbg.github.io/calculator/" target="_blank">
                         <div class="card-content">
                             <div class="card-content-title">
-                                <h2>webpage</h2>
+                                <h2>View Project</h2>
+                                <h3>Javascript Calculator</h3>
                             </div>
                             <div class="card-content-link">
                                 <!---technically not allowed to next links in another link but i couldnt figure out how else to do this so wrapping the nested a tag in <object> seems to work for now-->
-                                <object><a href="https://www.geeksforgeeks.org/how-to-position-a-div-at-the-bottom-of-its-container-using-css/">&lt;/ &gt;</a></object><!--used special charachters to display html as text-->
+                                <object><a href="https://github.com/darylbg/calculator" target="_blank">&lt;/ &gt;</a></object><!--used special charachters to display html as text-->
                             </div>
                         </div>
                     </a>
                 </card>
                 <card class="card-4">
-                    <a class="card-link" href="https://css-tricks.com/nested-links/">
+                    <a class="card-link" href="https://darylbg.github.io/milestoneproject01/" target="_blank">
                         <div class="card-content">
                             <div class="card-content-title">
-                                <h2>webpage</h2>
+                                <h2>View Project</h2>
+                                <h3>Band Website</h3>
                             </div>
                             <div class="card-content-link">
                                 <!---technically not allowed to next links in another link but i couldnt figure out how else to do this so wrapping the nested a tag in <object> seems to work for now-->
-                                <object><a href="https://www.geeksforgeeks.org/how-to-position-a-div-at-the-bottom-of-its-container-using-css/">&lt;/ &gt;</a></object><!--used special charachters to display html as text-->
+                                <object><a href="https://github.com/darylbg/milestoneproject01" target="_blank">&lt;/ &gt;</a></object><!--used special charachters to display html as text-->
                             </div>
                         </div>
                     </a>
                 </card>
                 <card class="card-5">
-                    <a class="card-link" href="https://css-tricks.com/nested-links/">
+                    <a class="card-link" href="https://darylbg.github.io/prework-study-guide/" target="_blank">
                         <div class="card-content">
                             <div class="card-content-title">
-                                <h2>webpage</h2>
+                                <h2>View Project</h2>
+                                <h3>HTML/CSS/Javascript</h3>
                             </div>
                             <div class="card-content-link">
                                 <!---technically not allowed to next links in another link but i couldnt figure out how else to do this so wrapping the nested a tag in <object> seems to work for now-->
-                                <object><a href="https://www.geeksforgeeks.org/how-to-position-a-div-at-the-bottom-of-its-container-using-css/">&lt;/ &gt;</a></object><!--used special charachters to display html as text-->
+                                <object><a href="https://github.com/darylbg/prework-study-guide" target="_blank">&lt;/ &gt;</a></object><!--used special charachters to display html as text-->
                             </div>
                         </div>
                     </a>
@@ -126,7 +141,7 @@
         </section>
         <section id="contact-me" class="contact-me-section">
             <div class="contact-me-title">
-                <h2>Contact Me</h2>
+                <h1>Contact Me</h1>
             </div>
             <div class="contact-me-content">
                 <ul>
@@ -138,11 +153,26 @@
         </section>
     </main>
     <footer>
-        <h4>Find me on my Social Media</h4>
+        <h3>Find me on my Social Media</h3>
         <ul>
-            <li><a href="">Instagram</a></li>
-            <li><a href="">Facebook</a></li>
-            <li><a href="">Twitter</a></li>
+            <!---<a href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by Freepik - Flaticon</a>--->
+            <li>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img  class="instagram-icon" src="assets/images/instagram-icon.png" alt="Instagram Icon">
+                </a>
+            </li>
+            <!---"https://www.flaticon.com/free-icons/facebook" Facebook icons created by Freepik - Flaticon-->
+            <li>
+                <a href="https://en-gb.facebook.com/" target="_blank">
+                    <img  class="facebook-icon" src="assets/images/facebook-icon.png" alt="Facebook Icon">
+                </a>
+            </li>
+            <!---<a href="https://www.flaticon.com/free-icons/twitter-social-badge" title="twitter social badge icons">Twitter social badge icons created by Pixel perfect - Flaticon</a>-->
+            <li>
+                <a href="https://twitter.com/home" target="_blank">
+                    <img  class="twitter-icon" src="assets/images/twitter-icon.png" alt="Twitter Icon">
+                </a>
+            </li>
         </ul>
     </footer>
 </body>

@@ -2,6 +2,7 @@
 
 :root {
     --grey: #3d3d3d;
+    --light-grey: #D3D3D3;
     --main-font: 'Barlow Semi Condensed', sans-serif;
 }
 
@@ -13,6 +14,7 @@
 body {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -25,24 +27,11 @@ li {
 
 header {
     width: 100%;
-}
-
-@media screen and (min-width: 1000px) {
-    main {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
+    background-color: var(--grey);
 }
 
 nav {
     width: 100%;
-}
-
-.display-name img {
-    vertical-align: middle;
-    max-height: 70px;
-    max-width: 70px;
-    border-radius: 50px;
 }
 
 nav .display-name {
@@ -56,18 +45,33 @@ nav .display-name * {
     display: inline-block;
 }
 
+.display-name img {
+    vertical-align: middle;
+    max-height: 50px;
+    max-width: 50px;
+    border: 5px solid white;
+    border-radius: 50px;
+}
+
 .display-name h2 {
     vertical-align: middle;
     font-family: var(--main-font);
-    color: var(--grey);
+    color: var(--light-grey);
+    padding-left: 10px;
 }
 
-.main-nav {
+.expanded-nav {
     display: inline-block;
     padding-top: 20px;
 }
 
-.main-nav * {
+@media screen and (max-width: 768px) {
+    .expanded-nav {
+        display: none;
+    }
+}
+
+.expanded-nav * {
     display: inline-block;
 }
 
@@ -76,29 +80,22 @@ nav ul {
     padding-right: 50px;
 }
 
-.main-nav li {
+.expanded-nav li {
     margin-right: 10px;
     margin-left: 10px;
 }
 
-.main-nav li a {
-    color: var(--grey);
+.expanded-nav li a {
+    color: var(--light-grey);
     font-size: 20px;
     padding-bottom: 10px;
     border-bottom: 2;
     font-family: var(--main-font);
 }
 
-.main-nav li a:hover {
-    /*font-size: 25px;*/
-    /*transition: all ease-in 0.2s;*/
-    transform: scale(1.1);
-}
-
-@media screen and (max-width: 768px) {
-    .main-nav {
-        display: none;
-    }
+.expanded-nav li a:hover {
+    border-bottom: 1px solid var(--light-grey);
+    color: white;
 }
 
 .dropdown {
@@ -112,33 +109,52 @@ nav ul {
     }
 }
 
-/* css checkbox hack from codepen  https://codepen.io/bloom-dan/pen/vKdoaM */
+/*---Dropdown navbar useing checkbox hack with modified code from codepen  https://codepen.io/bloom-dan/pen/vKdoaM---*/
 
 input[type=checkbox] {
     display: none;
-  }
-
-  .dropdown-items {
-    
   }
 
   .dropdown-items ul {
     max-height: 0px;
     overflow: hidden;
     list-style: none;
-    transition: all 1s cubic-bezier(.325, 1, .22, 1);
+    transition: all 0s cubic-bezier(.325, 1, .22, 1);
   }
   
   input[type=checkbox]:checked ~ .dropdown-items ul {
     height: auto;
     max-height: 12rem;
+    width: 100%;
     transition: all 1s cubic-bezier(.5, 1, .22, 1);
+    padding: 0;
+    margin: 0;
+  }
+
+  input[type=checkbox]:checked ~ .dropdown-items ul li {
+    width: 100%;
+  }
+
+  input[type=checkbox]:checked ~ .dropdown-items ul li a {
+    font-size: 20px;
+    font-family: var(--main-font);
+    height: 100%;
+    width: 100%;
+    display: block;
+    color: #D3D3D3;
+    padding: 3px 0px 3px 40px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+
+  input[type=checkbox]:checked ~ .dropdown-items ul li a:hover {
+    color: var(--grey);
+    background-color: var(--light-grey);
   }
   
   .hamburger {
     display: block;
     position: absolute;
-    top: 18px;
+    top: 50px;
     right: 13px;
     height: 27px;
     width: 27px;
@@ -149,7 +165,7 @@ input[type=checkbox] {
   .line {
     position: absolute;
     display: block;
-    background: #3d3d3d;
+    background: var(--light-grey);
     width: 18px;
     height: .15rem;
     border-radius: .2rem;
@@ -188,14 +204,19 @@ input[type=checkbox] {
     transform: translateX(-8px) rotate(45deg) translateY(-8px);
   }
 
-  /* end of checkbox copied code   */
+  /*---end of modified dropdown code---*/
 
-.subtitle-section {
-    background-color: blue;
+@media screen and (min-width: 1000px) {
+    main {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 }
 
-.subtitle-section h2 {
-    margin: 0;
+@media screen and (max-width: 768px) {
+    main {
+        padding: 0 5%;
+    }
 }
 
 main section {
@@ -217,8 +238,8 @@ main section > * {
 .about-me-title,
 .my-work-title,
 .contact-me-title {
+    text-align: center;
     width: 30%;
-    border-right: 2px solid #3d3d3d;
 }
 
 @media screen and (max-width: 768px) {
@@ -230,10 +251,32 @@ main section > * {
 }
 
 .about-me-content,
+.contact-me-content {
+    border-left: 2px solid var(--grey);
+}
+
+@media screen and (max-width: 768px) {
+    .about-me-content,
+    .contact-me-content {
+    border-left: none;
+    }
+}
+
+.about-me-title h1,
+.my-work-title h1,
+.contact-me-title h1 {
+    font-size: 50px;
+    color: var(--grey);
+    font-family: var(--main-font);
+    font-weight: bold;
+} 
+
+.about-me-content,
 .my-work-content,
 .contact-me-content {
     width: 70%;
     float: right;
+    margin: 60px 0 60px 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -242,7 +285,27 @@ main section > * {
     .contact-me-content {
         width: 100%;
         float: none;
+        margin: 20px 0 20px 0;
     }
+}
+
+.about-me-content ul li {
+    display: block;
+}
+
+.about-me-content ul li img {
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.about-me-content ul li p {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+    font-family: var(--main-font);
+    color: var(--grey);
+    padding-left: 20px;
 }
 
 .my-work-content {
@@ -254,9 +317,11 @@ main section > * {
 
 .my-work-content card {
     background-color: rgba(248, 247, 216, 0.7);
+    background-size: 100% auto !important;
+    background-repeat: no-repeat !important;
     overflow: hidden;
     min-width: 100px;
-    margin: 10px 10px 10px 10px;
+    margin: 15px 15px 15px 15px;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
@@ -264,24 +329,52 @@ main section > * {
 .my-work-content card:hover {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 12px 12px;
     transition: all ease-in-out 0.2s;
+    transform: translate(0, -5px);
+}
+
+.card-2,
+.card-3,
+.card-4,
+.card-5 {
+    flex: 1 0 40%;
+    height: 200px;
+}
+
+@media screen and (max-width: 768px) {
+    .card-2,
+    .card-3,
+    .card-4,
+    .card-5 {
+    flex: 100%;
+    }
 }
 
 .card-1 {
     flex: 100%;
     height: 400px;
-    /*background-image: url("../images/card-1.PNG");*/
     background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,.9)),
     url("../images/card-1.PNG");
-    background-size: 100% auto;
-    background-repeat: no-repeat;
     
 }
 
 .card-2 {
     background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.9)),
     url("../images/card-2.PNG");
-    background-size: 100% auto;
-    background-repeat: no-repeat;
+}
+
+.card-3 {
+    background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.9)),
+    url("../images/card-3.PNG");
+}
+
+.card-4 {
+    background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.9)),
+    url("../images/card-4.PNG");
+}
+
+.card-5 {
+    background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.9)),
+    url("../images/card-5.PNG");
 }
 
 .card-link {
@@ -301,8 +394,55 @@ main section > * {
 }
 
 .card-content-title h2 {
+    font-weight: 100;
+    font-size: 35px;
+    margin: 0 0 5px 40px;
     font-family: var(--main-font);
     color: white;
+}
+
+.card-2 .card-content-title h2,
+.card-3 .card-content-title h2,
+.card-4 .card-content-title h2,
+.card-5 .card-content-title h2 {
+    margin: 0 0 2px 20px;
+    color: white;
+    font-size: 32px;
+}
+
+@media screen and (max-width: 1250px) {
+    .card-2 .card-content-title h2,
+    .card-3 .card-content-title h2,
+    .card-4 .card-content-title h2,
+    .card-5 .card-content-title h2 {
+        margin-left: 10px;   
+        font-size: 28px; 
+    } 
+}
+
+.card-content-title h3 {
+    font-family: var(--main-font);
+    color: white;
+    margin: 0 0 40px 40px;
+    font-weight: 100;
+    margin: 0 0 40px 40px;
+}
+
+.card-2 .card-content-title h3,
+.card-3 .card-content-title h3,
+.card-4 .card-content-title h3,
+.card-5 .card-content-title h3 {
+    margin: 5px 0 20px 20px;
+}
+
+@media screen and (max-width: 1250px) {
+    .card-2 .card-content-title h3,
+    .card-3 .card-content-title h3,
+    .card-4 .card-content-title h3,
+    .card-5 .card-content-title h3 {
+       margin: 5px 0 20px 10px;
+       font-size: 15px;
+    }
 }
 
 .card-content-link {
@@ -319,6 +459,23 @@ main section > * {
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+.card-2 .card-content-link,
+.card-3 .card-content-link,
+.card-4 .card-content-link,
+.card-5 .card-content-link {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.card-2 .card-content-link a,
+.card-3 .card-content-link a,
+.card-4 .card-content-link a,
+.card-5 .card-content-link a {
+    border-radius: 50%;
 }
 
 .card-content-link:hover {
@@ -340,60 +497,6 @@ main section > * {
 .my-work-content card:hover .card-content-link a{
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 12px 12px;   
     transition: all ease-in-out 0.2s;
-}
-
-.card-1 .card-content-title h2 {
-    margin-bottom: 55px;
-    margin-left: 40px;
-}
-
-.card-2 .card-content-title h2,
-.card-3 .card-content-title h2,
-.card-4 .card-content-title h2,
-.card-5 .card-content-title h2 {
-    margin-bottom: 35px;
-    margin-left: 20px;
-}
-
-.card-content-title h2 {
-    font-weight: 100;
-    font-size: 35px;
-    
-}
-
-.card-2,
-.card-3,
-.card-4,
-.card-5 {
-    flex: 1 0 40%;
-    height: 200px;
-}
-
-@media screen and (max-width: 768px) {
-    .card-2,
-    .card-3,
-    .card-4,
-    .card-5 {
-    flex: 100%;
-    }
-}
-
-.card-2 .card-content-link,
-.card-3 .card-content-link,
-.card-4 .card-content-link,
-.card-5 .card-content-link {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
-
-.card-2 .card-content-link a,
-.card-3 .card-content-link a,
-.card-4 .card-content-link a,
-.card-5 .card-content-link a {
-    border-radius: 50%;
 }
 
 /*--- Contact me section---*/
@@ -427,4 +530,64 @@ main section > * {
         display: block;
     }
 }
+
+/*---Footer---*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--grey);
+    width: 100%;
+}
+
+footer h3 {
+    font-family: var(--main-font);
+    color: var(--light-grey);
+}
+
+footer ul {
+    padding-left: 10px;
+}
+
+footer ul li {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 30%;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 5px solid white;
+}
+
+footer ul li a {
+    width: 100%;
+    height: 100%;
+}
+
+footer ul li a img {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    border-radius: 30%;
+}
+
+footer ul li a img:hover {
+    transform: scale(1.2); 
+    transition: all ease-in 0.2s;
+}
+
+.instagram-icon {
+    background: rgb(73,97,200);
+    background: linear-gradient(180deg, rgba(73,97,200,1) 0%, rgba(206,58,153,1) 35%, rgba(252,212,81,1) 100%);
+}
+
+.facebook-icon {
+    background-color: #3b5998;
+}
+
+.twitter-icon {
+    background-color: #00acee;
+}
+
+
  

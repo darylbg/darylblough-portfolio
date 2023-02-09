@@ -11,7 +11,7 @@ Deployed project should look on a mobile device like this
 ![screenshot](assets/images/screenshot-mobile.png)
 
 ## Deployed Project
-Deployed project can be viewed here: ![Portfolio](.) .
+Deployed project can be viewed here: https://darylbg.github.io/darylblough-portfolio/
 
 
 ## Usage
